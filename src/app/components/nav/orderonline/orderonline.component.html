@@ -1,0 +1,60 @@
+
+<style>
+  div{
+    max-width: 100%;
+    height: 900px;
+    background: #fff;
+    padding-top: 150px;
+  }
+
+  h1{
+    padding-bottom: 30px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000, 0 0 25px rgb(0, 122, 0), 0 0 5px rgb(0, 0, 0);
+  }
+
+  .text{
+    width: 500px;
+    margin-top: 10px;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 15px 15px;
+    background: #e7e6e6;
+    font-size: 2rem;
+    border-style: none;
+  }
+
+  #text{
+    margin-top: 10px;
+    margin-left: 35%;
+    padding: 15px 15px;
+    font-size: 1.5rem;
+    background: #206710;
+    color: #fff;
+    border-style: none;
+  }
+
+  p{
+    margin-top: 5%;
+    margin-left: 15%;
+    font-size: 1.8rem;
+    font-family: cursive;
+  }
+
+
+</style>
+
+<div>
+  <h1>Select an Option</h1>
+  <form action="">
+    <input class="text" type="submit" value="Pick Up 🛵" (click)="userReg()" >
+    <input class="text" type="submit" value="Delivery 🌎" (click)="userReg()">
+  </form><br>
+
+  <p *ngIf="isRegist; else emptyReg">{{message}} with the name of: {{firstName}} {{lastName}}</p>
+
+  <ng-template #emptyReg>
+    <p>Log is empty!</p>
+  </ng-template>
+</div>

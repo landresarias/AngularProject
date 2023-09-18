@@ -1,0 +1,79 @@
+
+<style>
+  div{
+    max-width: 100%;
+    height: 1100px;
+    background: #fff;
+    padding-top: 150px;
+  }
+
+  h1{
+    padding-bottom: 30px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000, 0 0 25px rgb(0, 122, 0), 0 0 5px rgb(0, 0, 0);
+  }
+
+  .text{
+    width: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 10px 15px;
+    background: #e7e6e6;
+    font-size: 2rem;
+    border-style: none;
+  }
+
+  #text{
+    margin-top: 10px;
+    margin-left: 35%;
+    padding: 15px 15px;
+    font-size: 1.5rem;
+    background: #206710;
+    color: #fff;
+    border-style: none;
+  }
+
+  p, h2{
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    font-size: 1.8rem;
+    font-family: cursive;
+  }
+
+
+</style>
+
+<div>
+  <h1>Make a Reservation</h1>
+  <p>
+    We Walcome both walk-ins and reservations. To book your reservation online for lunch
+    or dinner, please select your location and click the button to find available
+    reservation times. If you prefer to make a reservation via telephone, please
+    give us a call!
+  </p>
+  <h2>Please fill out the form below to book you table.</h2>
+  <form action="">
+    <label class="text" style="background: white">Party Size</label>
+    <input class="text" type="text" name="Party" [(ngModel)]="party"><br>
+    <label class="text" style="background: white">Date</label>
+    <input class="text" type="text" name="Date" [(ngModel)]="date"><br>
+    <label class="text" style="background: white">Time</label>
+    <input class="text" type="text" name="Date" [(ngModel)]="time"><br>
+    <input id="text" type="submit" value="Register" (click)="userReg()">
+  </form><br>
+
+  <p *ngIf="isRegist; else emptyReg">{{message}} {{party}} people, Date: {{date}}, Time: {{time}}</p>
+
+  <ng-template #emptyReg>
+    <p>Log is empty!</p>
+  </ng-template>
+</div>
+
+
+
+,
